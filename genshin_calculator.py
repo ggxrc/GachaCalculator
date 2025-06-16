@@ -1,28 +1,28 @@
 PRECOS = {
     "exploracao_regiao_principal": {
-        "Mondstadt": {"base": 50.00, "por_area_nao_100": 5.00, "bussola_desconto": 0.10, "reputacao_por_lvl": 2.00, "estatua_por_lvl": 1.00},
-        "Liyue": {"base": 60.00, "por_area_nao_100": 6.00, "bussola_desconto": 0.10, "reputacao_por_lvl": 2.00, "estatua_por_lvl": 1.00},
-        "Inazuma": {"base": 80.00, "por_area_nao_100": 8.00, "bussola_desconto": 0.10, "reputacao_por_lvl": 2.50, "estatua_por_lvl": 1.20},
-        "Sumeru": {"base": 100.00, "por_area_nao_100": 10.00, "bussola_desconto": 0.10, "reputacao_por_lvl": 3.00, "estatua_por_lvl": 1.50},
-        "Fontaine": {"base": 120.00, "por_area_nao_100": 12.00, "bussola_desconto": 0.10, "reputacao_por_lvl": 3.50, "estatua_por_lvl": 1.80},
-        "Natlan": {"base": 90.00, "por_area_nao_100": 9.00, "bussola_desconto": 0.10, "reputacao_por_lvl": 2.80, "estatua_por_lvl": 1.40} # Natlan incompleta
+        "Mondstadt": {"base": 25.00, "por_area_nao_100": 5.00, "bussola_desconto": 5, "reputacao_por_lvl": 1.00, "estatua_por_lvl": 2.00},
+        "Liyue": {"base": 35.00, "por_area_nao_100": 6.00, "bussola_desconto": 6, "reputacao_por_lvl": 1.00, "estatua_por_lvl": 2.00},
+        "Inazuma": {"base": 40.00, "por_area_nao_100": 6.50, "bussola_desconto": 7, "reputacao_por_lvl": 2.00, "estatua_por_lvl": 4.00},
+        "Sumeru": {"base": 100.00, "por_area_nao_100": 8.00, "bussola_desconto": 20, "reputacao_por_lvl": 2.50, "estatua_por_lvl": 2.00},
+        "Fontaine": {"base": 45.00, "por_area_nao_100": 6.50, "bussola_desconto": 7, "reputacao_por_lvl": 2.50, "estatua_por_lvl": 2.00},
+        "Natlan": {"base": 40.00, "por_area_nao_100": 6.00, "bussola_desconto": 20, "reputacao_por_lvl": 2.00, "estatua_por_lvl": 2.00} # Natlan incompleta
     },
     "exploracao_regiao_extra": {
         "Espinha do Dragao": 30.00,
-        "Abismo": 40.00,
+        "Abismo": 50.00,
         "Enkanomiya": 45.00,
         "Mar Antigo": 50.00,
         "Vale Chenyu": 55.00, 
         "Montanha Sagrada Antiga": 40.00
     },
     "upar_arvore_sistema": {
-        "Graca da Sakura Sagrada": 2.00,  # Preço por nível
+        "Graca da Sakura Sagrada": 1.25,  # Preço por nível
         "Arvore dos Sonhos": 2.50,
-        "Fonte de Lucine": 2.80,
-        "Chama de Tona": 2.20,
-        "Arvore do Sabugueiro": 1.50,
-        "Lumen da Pedra": 1.80,
-        "Chuva de Jade": 2.00
+        "Fonte de Lucine": 1.50,
+        "Chama de Tona": 1.75,
+        "Arvore do Sabugueiro": 3.00,
+        "Lumen da Pedra": 2.50,
+        "Chuva de Jade": 3.50
     },
     "farm_chefe": 0.50,  # Preço por material de chefe (por exemplo, 0.50 por material)
     "build_personagem": {

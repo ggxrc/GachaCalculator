@@ -1,0 +1,136 @@
+Precificação de Genshin Impact
+   Preços em Reais (R$) para diferentes serviços no jogo.
+
+Serviços de Aventura
+   cálculo de preços: 
+      os descontos são aplicados sequencialmente sobre o preço base.
+      1) aplica-se o desconto da bússola apenas se o cliente tiver a bússola.
+      2) depois aplica-se o desconto de exploração sobre o valor resultante.
+      exemplo: preço base R$ 100,00                10% bússola = R$ 90,00
+      depois R$ 90,00               5% exploração = R$ 85,50
+   
+      Sistema de desconto por exploração:
+         0,45% de desconto para cada 1% de exploração
+         O desconto é acumulado até o máximo de 80% de exploração (total: 36% de desconto)
+         
+      Sistema de desconto por áreas escolhidas:
+         Para cada área individual que o cliente deseja explorar, ele ganha um desconto de (0,7 × quantidade total de áreas da nação)%
+         O desconto é aplicado na soma de cada área nova adicionada ao carrinho
+         Se o cliente quiser explorar todas as áreas de uma nação, o preço final será igual ao preço base da nação
+         Exemplos:
+               Mondstadt (4 áreas): cada área escolhida dá 0,7 × 4 = 2,8% de desconto
+               Liyue (5 áreas): cada área escolhida dá 0,7 × 5 = 3,5% de desconto
+               Inazuma (6 áreas): cada área escolhida dá 0,7 × 6 = 4,2% de desconto
+               Sumeru (13 áreas): cada área escolhida dá 0,7 × 13 = 9,1% de desconto
+               Fontaine (8 áreas): cada área escolhida dá 0,7 × 8 = 5,6% de desconto
+               Natlan (8 áreas): cada área escolhida dá 0,7 × 8 = 5,6% de desconto
+            Exemplo prático:
+               Se um cliente escolher 5 áreas em uma nação com 9 áreas totais, com desconto de 6,3% por área:
+                  Área 1: Preço normal
+                  Área 2: Soma (Área 1 + Área 2) com 6,3% de desconto
+                  Área 3: Soma (Área 1 + Área 2 + Área 3) com 6,3% de desconto 
+                  Área 4: Soma (Área 1 + Área 2 + Área 3 + Área 4) com 6,3% de desconto
+                  Área 5: Soma (Área 1 + Área 2 + Área 3 + Área 4 + Área 5) com 6,3% de desconto
+            
+           O desconto é aplicado cumulativamente ao adicionar cada nova área ao carrinho
+
+   Preços base regiões:
+      Mondstadt: R$ 35,00
+      Liyue: R$ 40,00
+      Inazuma: R$ 50,00
+      Sumeru: R$ 100,00
+      Fontaine: R$ 55,00
+      Natlan: R$ 60,00
+
+   Preços base áreas específicas:
+      Dragonspine: R$ 30,00
+      Despenhadeiro: R$ 50,00
+      Vale Chenyu: R$ 50,00
+      Enkanomiya: R$ 40,00
+      Mar antigo: R$ 45,00
+      Vulcão: R$ 40,00
+
+   Preços por nível de reputação:
+      Mondstadt: R$ 1,00
+      Liyue: R$ 1,25
+      Inazuma: R$ 2,00
+      Sumeru: R$ 1,50
+      Fontaine: R$ 2,00
+      Natlan: R$ 1,75
+
+   preços por nível de árvore:
+      O preço por nível pode ter um desconto de 75% se o cliente 
+      optar por explorar a região por completo.
+
+      Sabugueiro: R$ 1,50 
+      árvore do vale Chenyu: R$ 1,75
+      Pedra Lúmem: R$ 1,75
+      Sakura: R$ 1,75
+      árvore dos sonhos: R$ 2,25
+      lago das Pari: R$ 2,50
+      Fonte de Lucine: R$ 2,00
+      Placa de Tona: R$ 2,00
+
+   Desconto de bússola:
+      5% de desconto pela bússola de Mondstadt
+      11% de desconto pela bússola de Liyue
+      17% de desconto pela bússola de Inazuma
+      25% de desconto pela bússola de Sumeru
+      12% de desconto pela bússola de Fontaine
+      15% de desconto pela bússola de Natlan
+
+   Regiões das nações:
+      Mondstadt:
+         Colina Silvante: R$ 12,00
+         Vale das Estrelas Cadentes: R$ 13,00
+         Terras Altas das Lamentações: R$ 14,00
+         Montanhas das Coroas: R$ 14,00
+      Liyue:
+         Minlin: R$ 11,00
+         Mar de Nuvens: R$ 12,00
+         Estuário de Qiongji: R$ 12,00
+         Lisha: R$ 13,00
+         Planícies Bishui: R$ 14,00
+      Inazuma:
+         Ilha Yashiori: R$ 12,00
+         Kannazuka: R$ 12,00
+         Ilha Watatsumi: R$ 13,00
+         Ilha Narukami: R$ 14,00
+         Ilha Seirai: R$ 14,00
+         Ilha Tsurumi: R$ 15,00
+      Sumeru:
+         Campo Vissudha: R$ 11,00
+         Alto Setekh: R$ 11,00
+         Floresta Avidya: R$ 12,00
+         Vanarana: R$ 13,00
+         Sementeira Perdida: R$ 13,00
+         Baixo Setekh: R$ 14,00
+         Reino Ashavan: R$ 14,00
+         Floresta Lokapala: R$ 15,00
+         Vale Ardravi: R$ 16,00
+         Hipostilo Desértico: R$ 17,00
+         Gavireh Lajavard: R$ 17,00
+         Reino de Farakhkert: R$ 18,00
+         Deserto de Hadramaveth: R$ 19,00
+      Fontaine:
+         Região Nostoi: R$ 10,00
+         Região Mortaine: R$ 10,00
+         Floresta de Erinnyes: R$ 11,00
+         Distrito da Corte de Fontaine: R$ 11,00
+         Instituto de Pesquisas de Engenharia de Energia cínetica de Fontaine: R$ 12,00
+         Distrito Beryl: R$ 12,00
+         Distrito Belleau: R$ 13,00
+         Região Liffey: R$ 14,00
+      Natlan:
+         Cordilheira Tezcatepetonco: R$ 11,00
+         Precipício Quahuacan: R$ 11,00
+         Montanha Coatepec: R$ 12,00
+         Bacia das Chamas Incontáveis: R$ 12,00
+         Ochkanatlan: R$ 13,00
+         Atocpan: R$ 13,00
+         Pantanal Toyac: R$ 14,00
+         Vale Tequemecan: R$ 15,00
+
+Serviços de builds
+   Em progresso.
+

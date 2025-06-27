@@ -2,22 +2,21 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction, EmbedBuilder } from 'discord.js';
 import { AdventurePriceCalculator } from './use-cases/adventure-price-calculator';
 import { BuildPriceCalculator } from './use-cases/build-price-calculator';
-import { PriceRepository } from '../interfaces/repositories/price-repository';
+import { PriceRepository } from '../domain/repositories/price-repository';
 import { AdventureService, BuildService, CharacterMaterials } from '../domain/entities';
 import { ValidationService } from '../domain/validation';
+import { container } from '../config/dependency-container';
+
 export class AdventureCommand {
   private calculator: AdventurePriceCalculator;
   private validationService: ValidationService;
 
-  constructor() {
-    const priceRepository = new PriceRepository();
-    this.calculator = new AdventurePriceCalculator(priceRepository);
-    this.validationService = new ValidationService();
-  }onstructor() {
-    const priceRepository = new PriceRepository();
-    this.calculator = new AdventurePriceCalculator(priceRepository);
-    this.validationService = new ValidationService();
-  } this.calculator = new AdventurePriceCalculator(priceRepository);
+  constructor(
+    calculator: AdventurePriceCalculator = container.adventurePriceCalculator,
+    validationService: ValidationService = container.validationService
+  ) {
+    this.calculator = calculator;
+    this.validationService = validationService;
   }
 
   getSlashCommand() {
@@ -100,7 +99,7 @@ export class AdventureCommand {
 
       const embed = new EmbedBuilder()
         .setTitle('💰 Cálculo de Preço - Serviços de Aventura')
-        .setColor(BOT_CONFIG.COLORS.ADVENTURE)
+        .setColor('#0099ff') // Substitua por BOT_CONFIG.COLORS.ADVENTURE se necessário
         .addFields(
           { name: 'Preço Base', value: `R$ ${result.basePrice.toFixed(2)}`, inline: true },
           { name: 'Preço Final', value: `R$ ${result.finalPrice.toFixed(2)}`, inline: true },
@@ -131,10 +130,14 @@ export class BuildCommand {
   private priceRepository: PriceRepository;
   private validationService: ValidationService;
 
-  constructor() {
-    this.priceRepository = new PriceRepository();
-    this.calculator = new BuildPriceCalculator(this.priceRepository);
-    this.validationService = new ValidationService();
+  constructor(
+    calculator: BuildPriceCalculator = container.buildPriceCalculator,
+    priceRepository: PriceRepository = container.priceRepository as PriceRepository,
+    validationService: ValidationService = container.validationService
+  ) {
+    this.calculator = calculator;
+    this.priceRepository = priceRepository;
+    this.validationService = validationService;
   }
 
   getSlashCommand() {
@@ -182,7 +185,8 @@ export class BuildCommand {
   async execute(interaction: ChatInputCommandInteraction) {
     try {
       const character = interaction.options.getString('personagem', true);
-      const difficulty = this.priceRepository.getCharacterDifficulty(character);
+      const rawDifficulty = this.priceRepository.getCharacterDifficulty(character);
+      const difficulty = this.validationService.validateDifficulty(rawDifficulty);
 
       const materials: CharacterMaterials = {
         dropItems: {
@@ -202,14 +206,14 @@ export class BuildCommand {
       const service: BuildService = {
         character,
         difficulty,
-        materialsCollected: materials
+        materials: materials
       };
 
       const result = this.calculator.calculatePrice(service);
 
       const embed = new EmbedBuilder()
         .setTitle(`⚔️ Cálculo de Preço - Build ${character}`)
-        .setColor(BOT_CONFIG.COLORS.BUILD)
+        .setColor('#ff9900') // Substitua por BOT_CONFIG.COLORS.BUILD se necessário
         .addFields(
           { name: 'Personagem', value: character, inline: true },
           { name: 'Dificuldade', value: difficulty.toString(), inline: true },

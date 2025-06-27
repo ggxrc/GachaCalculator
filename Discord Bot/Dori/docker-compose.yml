@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dori-bot:
+    build: .
+    container_name: dori-bot
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=production

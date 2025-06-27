@@ -1,0 +1,180 @@
+Preço base de personagem: R$ 30,00
+multiplicador de preço baseado na dificuldade:
+    dificuldade 1 -> -15%
+    dificuldade 2 -> -5%
+    dificuldade 3 -> 0%
+    dificuldade 4 -> +5%
+    dificuldade 5 -> +15%
+
+desconto de preço baseado na quantidade de itens necessários para ascenção já coletados:
+    item de drop:
+        cada 10 itens cinza -> 0%
+        cada 10 itens verde -> -1%
+        cada 6 itens raro -> -1.5%
+    item de boss:
+        cada 2 itens -> -0.5%
+    pedra elemental:
+        cada 3 azuis -> -0.2%
+        cada 1 roxa -> -0.4%
+        cada 1 dourado -> -0.8%
+    item de coleta:
+        cada 8 itens -> -0.78%
+
+    máximo de desconto possível por itens coletados: -30%
+
+quantidade de itens necessários por nível de ascenção:
+    lvl 1 - 20+:
+        pedra elemental -> 1 verde
+        item de boss -> 0
+        item de coleta -> 3
+        item de drop -> 3 cinza
+    lvl 20 - 40+:
+        pedra elemental -> 3 azul
+        item de boss -> 2
+        item de coleta -> 10
+        item de drop -> 15 cinza
+    lvl 40 - 50+:
+        pedra elemental -> 6 azul
+        item de boss -> 4
+        item de coleta -> 20
+        item de drop -> 12 verde
+    lvl 50 - 60+:
+        pedra elemental -> 3 roxa
+        item de boss -> 8
+        item de coleta -> 30
+        item de drop -> 18 verde
+    lvl 60 - 70+:
+        pedra elemental -> 6 roxa
+        item de boss -> 12
+        item de coleta -> 45
+        item de drop -> 12 raro
+    lvl 70 - 80+:
+        pedra elemental -> 6 dourado
+        item de boss -> 20
+        item de coleta -> 60
+        item de drop -> 24 raro
+
+
+total de itens necessários para máximo nível de ascenção:
+    pedra elemental:
+        verde -> 1
+        azul -> 9
+        roxa -> 9
+        dourado -> 6
+    item de boss -> 46
+    item de coleta -> 168
+    item de drop:
+        cinza -> 18
+        verde -> 30
+        raro -> 36
+
+
+personagens dificuldade 1
+    Ifa
+    Kazuha
+    Emillie
+    Kaveh
+    Kachina
+    Noelle
+    Furina
+    Fischl
+    Bennett
+
+personagens dificuldade 2
+    Scaramouche
+    Chasca
+    Jean
+    Lynette
+    Sucrose
+    Yumemizuki Mizuki
+    Kinich
+    Kirara
+    Tighnari
+    Chiori
+    Xilonen
+    Dahlia
+    Layla
+    Dori
+    Iansan
+    Lisa
+    Yae Miko
+    Chevreuse
+    Mavuika
+
+personagens dificuldade 3
+    Faruzan
+    Lan Yan
+    Sayu
+    Retentora
+    Collei
+    Nahida
+    Yaoyao
+    Ningguang
+    Yunjin
+    Candace
+    Mualani
+    Neuvillette
+    Nilou
+    Xingqiu
+    Yelan
+    Citlali
+    Diona
+    Escoffier
+    Kaeya
+    Rosaria
+    Skirk
+    Kujou Sara
+    Kuki Shinobu
+    Ororon
+    Varesa
+    Amber
+    Gaming
+    Lyney
+    Xiangling
+    Yoimiya
+    
+personagens dificuldade 4
+    Venti
+    Xiao
+    Alhaitham
+    Albedo
+    Gorou
+    Navia
+    Zhongli
+    Barbara
+    Mona
+    Kokomi
+    Sigewinne
+    Childe
+    Charlotte
+    Eula
+    Freminet
+    Ganyu
+    Ayaka
+    Mica
+    Shenhe
+    Wriothesley
+    Beidou
+    Clorinde
+    Razor
+    Raiden Shogun
+    Arlecchino
+    Dehya
+    Diluc
+    Hu tao
+    Klee
+    Thoma
+    Yanfei
+    
+personagens dificuldade 5
+    Heizou
+    Baizhu
+    Itto
+    Ayato
+    Aloy
+    Chongyun
+    Qiqi
+    Cyno
+    Keqing
+    Sethos
+    Xinyan

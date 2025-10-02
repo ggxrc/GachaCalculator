@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="110dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/bg_servico"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- IMAGEM -->
+    <ImageView
+        android:id="@+id/ivServicoImagem"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:contentDescription="Ícone do serviço"/>
+
+    <!-- NOME -->
+    <TextView
+        android:id="@+id/tvServicoNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:layout_marginTop="6dp"
+        android:gravity="center"/>
+
+    <!-- DESCRIÇÃO -->
+    <TextView
+        android:id="@+id/tvServicoDescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrição"
+        android:textColor="#CCCCCC"
+        android:textSize="10sp"
+        android:layout_marginTop="3dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:gravity="center"/>
+
+</LinearLayout>

@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
 
 
         carregarServicos()
+        continuar_btn.setOnClickListener {
+            startActivity(Intent(this, servico_selecionado?.destino))
+        }
 
     }
     private fun carregarServicos(){
@@ -61,8 +64,7 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Selecionou: ${servico.nome}", Toast.LENGTH_SHORT).show()
 
-            val intent : Intent = Intent(this, servico.destino)
-            startActivity(intent)
+            continuar_btn.isEnabled = true
         }
 
         return itemView

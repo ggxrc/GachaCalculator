@@ -1,5 +1,6 @@
 package com.ads.dorisolucoes
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -15,14 +16,15 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var continuar_btn : Button
-    private var item_selecionado : View? = null
-    private var servico_selecionado : Servico? = null
+    private lateinit var continuar_btn : Button // Botão 👍
+    private var item_selecionado : View? = null // apenas para marcar e desmarcar o item selecionado
+    private var servico_selecionado : Servico? = null // usado pra ir pro serviço em questão
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         carregarServicos()
 
@@ -31,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         val containerServicos = findViewById<LinearLayout>(R.id.containerServicos)
         val servicos = ServicosRepository.getServicos()
 
-        // 3. Para cada serviço, criar e adicionar a view
         servicos.forEach { servico ->
             val itemView = criarItemServico(servico, containerServicos)
             containerServicos.addView(itemView)
@@ -51,20 +52,17 @@ class MainActivity : AppCompatActivity() {
         tvDescricao.text = servico.desc
 
         itemView.setOnClickListener {
-            // 1. Remove destaque do item anterior
-            item_selecionado?.setBackgroundResource(R.drawable.bg_servico)
 
-            // 2. Destaca o item clicado
-            itemView.setBackgroundResource(R.drawable.bg_servico_selecionado)
+            item_selecionado?.setBackgroundResource(R.drawable.bg_servico) // Remove a seleção do item anterior
 
-            // 3. Guarda qual item está selecionado
-            item_selecionado = itemView
+            itemView.setBackgroundResource(R.drawable.bg_servico_selecionado) // Adiciona a seleção ao novo item
 
-            when (item_selecionado?.id){
-                TODO() -> TODO()
-            }
+            item_selecionado = itemView // Atualiza o item selecionado
 
             Toast.makeText(this, "Selecionou: ${servico.nome}", Toast.LENGTH_SHORT).show()
+
+            val intent : Intent = Intent(this, servico.destino)
+            startActivity(intent)
         }
 
         return itemView

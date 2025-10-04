@@ -25,12 +25,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         carregarServicos()
         continuar_btn.setOnClickListener {
             startActivity(Intent(this, servico_selecionado?.destino))
         }
-
     }
     private fun carregarServicos(){
         val containerServicos = findViewById<LinearLayout>(R.id.containerServicos)
@@ -48,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         val ivImagem = itemView.findViewById<ImageView>(R.id.ivServicoImagem)
         val tvNome = itemView.findViewById<TextView>(R.id.tvServicoNome)
         val tvDescricao = itemView.findViewById<TextView>(R.id.tvServicoDescricao)
+
         continuar_btn = findViewById(R.id.continuar)
 
         ivImagem.setImageResource(servico.imagemId)
@@ -57,16 +56,13 @@ class MainActivity : AppCompatActivity() {
         itemView.setOnClickListener {
 
             item_selecionado?.setBackgroundResource(R.drawable.bg_servico) // Remove a seleção do item anterior
-
             itemView.setBackgroundResource(R.drawable.bg_servico_selecionado) // Adiciona a seleção ao novo item
-
             item_selecionado = itemView // Atualiza o item selecionado
-
             Toast.makeText(this, "Selecionou: ${servico.nome}", Toast.LENGTH_SHORT).show()
 
+            servico_selecionado = servico
             continuar_btn.isEnabled = true
         }
-
         return itemView
     }
 }

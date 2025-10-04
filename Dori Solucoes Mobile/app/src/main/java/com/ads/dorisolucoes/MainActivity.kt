@@ -27,7 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         carregarServicos()
         continuar_btn.setOnClickListener {
-            startActivity(Intent(this, servico_selecionado?.destino))
+            if (servico_selecionado != null)
+                startActivity(Intent(this, servico_selecionado?.destino))
+            else
+                Toast.makeText(this, "Selecione um serviço", Toast.LENGTH_SHORT).show()
         }
     }
     private fun carregarServicos(){

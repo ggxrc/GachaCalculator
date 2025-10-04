@@ -27,10 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         carregarServicos()
         continuar_btn.setOnClickListener {
-            if (servico_selecionado != null)
+            if (servico_selecionado?.destino != null)
                 startActivity(Intent(this, servico_selecionado?.destino))
             else
-                Toast.makeText(this, "Selecione um serviço", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Selecione um serviço válido", Toast.LENGTH_SHORT).show()
         }
     }
     private fun carregarServicos(){
@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity() {
             item_selecionado?.setBackgroundResource(R.drawable.bg_servico) // Remove a seleção do item anterior
             itemView.setBackgroundResource(R.drawable.bg_servico_selecionado) // Adiciona a seleção ao novo item
             item_selecionado = itemView // Atualiza o item selecionado
-            Toast.makeText(this, "Selecionou: ${servico.nome}", Toast.LENGTH_SHORT).show()
 
             servico_selecionado = servico
             continuar_btn.isEnabled = true

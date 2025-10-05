@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doAfterTextChanged
 
 class ExploracaoActivity : AppCompatActivity() {
 
@@ -21,6 +22,8 @@ class ExploracaoActivity : AppCompatActivity() {
     )
 
     private val precos_bussola = mapOf(
+
+        "sem desconto" to 1.0,
         "Mondstadt" to  (1 - 0.05), // 5% de desconto
         "Liyue" to (1 - 0.11), // 11% de desconto
         "Inazuma" to  (1 - 0.17), // 17% de desconto
@@ -33,46 +36,54 @@ class ExploracaoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exploracao)
         val nacoes = findViewById<AutoCompleteTextView>(R.id.nacoes)
+        val total_explorado = findViewById<EditText>(R.id.total_explorado)
+        val bussola = findViewById<RadioGroup>(R.id.rgBussola)
 
         if (nacoes.text != null)
             calcularResultado(nacoes)
-    }
-    fun escolherNacao(
-        nacoes: AutoCompleteTextView, onNacaoEscolhida: (String?, Double?) -> Unit) {
 
+            nacoes.addTextChangedListener {
+                calcularResultado(nacoes)
+            }
+            total_explorado.addTextChangedListener {
+                calcularResultado(nacoes)
+            }
+            bussola.setOnCheckedChangeListener { _, _ ->
+                calcularResultado(nacoes)
+            }
+    }
+    fun escolherNacao(nacoes: AutoCompleteTextView, onNacaoEscolhida: (String?, Double?) -> Unit) {
         val nacoes_array = resources.getStringArray(R.array.nacoes_array)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, nacoes_array)
         nacoes.setAdapter(adapter)
 
-        nacoes.addTextChangedListener {
-            val nome = nacoes.text.toString()
-            val preco = preco_nacoes[nome]
-            onNacaoEscolhida(nome.takeIf { it.isNotEmpty() }, preco)
-        }
+        val nome = nacoes.text.toString()
+        val preco = preco_nacoes[nome]
+        onNacaoEscolhida(nome, preco)
     }
-
 
     fun aplicarDescontos(nacoes: AutoCompleteTextView, preco: Double?): Double {
         if (preco == null) return 0.0
-
         val total_explorado = findViewById<EditText>(R.id.total_explorado)
         val bussola = findViewById<RadioGroup>(R.id.rgBussola)
 
-        // pega o valor atual do total explorado
-        val porcentagemExploracao = total_explorado.text.toString().toDoubleOrNull() ?: 0.0
-        var descontoExploracao = 1 - (0.45 * (porcentagemExploracao / 100))
+        var porcentagemExploracao = total_explorado.text.toString().toDoubleOrNull() ?: 0.0
+        var descontoExploracao = (0.45 * porcentagemExploracao) / 100
 
-        // limite de 36% de desconto via exploração
-        if ((descontoExploracao * 100) > 36) descontoExploracao = 0.36
+        total_explorado.addTextChangedListener{
 
-        // pega o valor atual do RadioGroup
+            porcentagemExploracao = total_explorado.text.toString().toDoubleOrNull() ?: 0.0
+            descontoExploracao = (0.45 * porcentagemExploracao) / 100
+        }
+        if ((descontoExploracao * 100) > 36)
+            descontoExploracao = 0.36
+
         val descontoBussola = if (bussola.checkedRadioButtonId == R.id.rbBussolaSim) {
-            precos_bussola[nacoes.text.toString()] ?: 1.0
-        } else 0.0
+            precos_bussola[nacoes.text.toString()]
+        } else precos_bussola["sem desconto"]
 
-        // cálculo final
-        val descontoTotal = if(descontoBussola != 0.0) descontoExploracao * descontoBussola else descontoExploracao
-        return preco * descontoTotal
+        return if(descontoBussola != 0.0) preco *  ( (1 - descontoExploracao ) * descontoBussola!!)
+        else preco * (1 - descontoExploracao)
     }
 
     private fun calcularResultado(nacoes: AutoCompleteTextView) {

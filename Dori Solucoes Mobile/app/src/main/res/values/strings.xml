@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Dori Solucoes</string>
+
+    <string-array name="nacoes_array">
+        <item>Mondstadt</item>
+        <item>Liyue</item>
+        <item>Inazuma</item>
+        <item>Sumeru</item>
+        <item>Fontaine</item>
+        <item>Natlan</item>
+    </string-array>
 </resources>

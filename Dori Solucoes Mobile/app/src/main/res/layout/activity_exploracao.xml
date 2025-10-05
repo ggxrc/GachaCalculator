@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiente_main">
+    android:background="@drawable/gradiente_main"
+    tools:context=".ExploracaoActivity">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/determination"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:shadowColor="@color/white"
         android:shadowRadius="25"
         android:text="~ Serviço de exploração ~"
@@ -22,141 +23,174 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout3"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_menu_nacao"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="183dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:hint="Escolha a nação"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo">
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+        <AutoCompleteTextView
+            android:id="@+id/nacoes"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center"
             android:fontFamily="@font/determination"
-            android:shadowColor="@color/white"
-            android:shadowRadius="25"
-            android:text="Total explorado (em %): "
-            android:textColor="@color/black"
-            android:textSize="16sp"
-
-
-            />
-
-        <EditText
-            android:id="@+id/quantidade_explorada"
-            android:layout_width="183dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|center"
-            android:ems="10"
-            android:fontFamily="@font/determination"
-            android:hint="Ex. 50"
-            android:inputType="number"
-            android:shadowColor="@color/white"
-            android:shadowRadius="25"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-    </FrameLayout>
-
-
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.50">
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:fontFamily="@font/determination"
-            android:shadowColor="@color/white"
-            android:shadowRadius="25"
-            android:text="Sim"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-
-            />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:fontFamily="@font/determination"
-            android:shadowColor="@color/white"
-            android:shadowRadius="25"
-            android:text="Não"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-    </RadioGroup>
+            android:inputType="none"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/determination"
+        android:shadowColor="@color/white"
+        android:shadowRadius="25"
+        android:text="Total explorado (em %):"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/total_explorado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/total_explorado" />
+
+    <EditText
+        android:id="@+id/total_explorado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:fontFamily="@font/determination"
+        android:hint="Ex. 50"
+        android:inputType="numberDecimal"
+        android:maxLength="5"
+        android:shadowColor="@color/white"
+        android:shadowRadius="25"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/layout_menu_nacao" />
+
+    <!-- 4. Bússola -->
+    <TextView
+        android:id="@+id/tvLabelBussola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/determination"
         android:shadowColor="@color/white"
         android:shadowRadius="25"
         android:text="Tem bússola?"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroup2"
+        app:layout_constraintBottom_toBottomOf="@+id/rgBussola"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toTopOf="@+id/rgBussola" />
 
+    <RadioGroup
+        android:id="@+id/rgBussola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelBussola"
+        app:layout_constraintTop_toBottomOf="@+id/total_explorado">
+
+        <RadioButton
+            android:id="@+id/rbBussolaSim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/determination"
+            android:text="Sim"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rbBussolaNao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="@font/determination"
+            android:text="Não"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <!-- 5. Texto de Informação e Preços -->
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="137dp"
+        android:id="@+id/tvInfoDesconto"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/determination"
         android:shadowColor="@color/white"
-        android:shadowRadius="25"
-        android:text="Escolha a nação: "
+        android:shadowRadius="15"
+        android:text="Você ganha 0,45% de desconto para cada 1% de exploração da nação (max 35%)."
         android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/autoCompleteTextView"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/rgBussola" />
 
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
-        android:layout_width="139dp"
+    <TextView
+        android:id="@+id/tvInfoPrecos"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/determination"
-        android:hint="Ex. Inazuma"
-        android:maxWidth="450dp"
+        android:lineSpacingExtra="2dp"
+        android:shadowColor="@color/white"
+        android:shadowRadius="15"
+        android:text="Mondstadt: R$ 35\nLiyue: R$ 40\nInazuma: R$ 50\nSumeru: R$ 100\nFontaine: R$ 55\nNatlan: R$ 60"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoDesconto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline_vertical"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoDesconto" />
+
+    <!-- Linha Guia para dividir a tela ao meio -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- 6. Resultado Final -->
+    <TextView
+        android:id="@+id/resultado_valor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/determination"
+        android:gravity="center|start"
+        android:padding="16dp"
+        android:background="#80FFFFFF"
         android:shadowColor="@color/white"
         android:shadowRadius="25"
         android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView10"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="@+id/textView10" />
-</FrameLayout>
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Escolha uma nação..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

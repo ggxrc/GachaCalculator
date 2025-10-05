@@ -9,4 +9,118 @@
         <item>Fontaine</item>
         <item>Natlan</item>
     </string-array>
+
+    <string-array name="niveis_ascensao">
+        <item>Lvl 1 – 20</item>
+        <item>Lvl 20 – 40+</item>
+        <item>Lvl 40 – 50+</item>
+        <item>Lvl 50 – 60+</item>
+        <item>Lvl 60 – 70+</item>
+        <item>Lvl 70 – 80+</item>
+        <item>Lvl 80 – 90</item>
+    </string-array>
+
+    <string-array name="personagens_array">
+        <item>Albedo</item>
+        <item>Alhaitham</item>
+        <item>Aloy</item>
+        <item>Amber</item>
+        <item>Arlecchino</item>
+        <item>Ayaka</item>
+        <item>Ayato</item>
+        <item>Baizhu</item>
+        <item>Barbara</item>
+        <item>Beidou</item>
+        <item>Bennett</item>
+        <item>Candace</item>
+        <item>Charlotte</item>
+        <item>Chasca</item>
+        <item>Chevreuse</item>
+        <item>Childe</item>
+        <item>Chiori</item>
+        <item>Chongyun</item>
+        <item>Citlali</item>
+        <item>Clorinde</item>
+        <item>Collei</item>
+        <item>Cyno</item>
+        <item>Dahlia</item>
+        <item>Dehya</item>
+        <item>Diluc</item>
+        <item>Diona</item>
+        <item>Dori</item>
+        <item>Emillie</item>
+        <item>Escoffier</item>
+        <item>Eula</item>
+        <item>Faruzan</item>
+        <item>Fischl</item>
+        <item>Freminet</item>
+        <item>Furina</item>
+        <item>Gaming</item>
+        <item>Ganyu</item>
+        <item>Gorou</item>
+        <item>Heizou</item>
+        <item>Hu tao</item>
+        <item>Iansan</item>
+        <item>Ifa</item>
+        <item>Itto</item>
+        <item>Jean</item>
+        <item>Kachina</item>
+        <item>Kaeya</item>
+        <item>Kaveh</item>
+        <item>Kazuha</item>
+        <item>Keqing</item>
+        <item>Kinich</item>
+        <item>Kirara</item>
+        <item>Klee</item>
+        <item>Kokomi</item>
+        <item>Kujou Sara</item>
+        <item>Kuki Shinobu</item>
+        <item>Lan Yan</item>
+        <item>Layla</item>
+        <item>Lisa</item>
+        <item>Lynette</item>
+        <item>Lyney</item>
+        <item>Mavuika</item>
+        <item>Mica</item>
+        <item>Mona</item>
+        <item>Mualani</item>
+        <item>Nahida</item>
+        <item>Navia</item>
+        <item>Neuvillette</item>
+        <item>Nilou</item>
+        <item>Ningguang</item>
+        <item>Noelle</item>
+        <item>Ororon</item>
+        <item>Qiqi</item>
+        <item>Raiden Shogun</item>
+        <item>Razor</item>
+        <item>Retentora</item>
+        <item>Rosaria</item>
+        <item>Sayu</item>
+        <item>Scaramouche</item>
+        <item>Sethos</item>
+        <item>Shenhe</item>
+        <item>Sigewinne</item>
+        <item>Skirk</item>
+        <item>Sucrose</item>
+        <item>Thoma</item>
+        <item>Tighnari</item>
+        <item>Varesa</item>
+        <item>Venti</item>
+        <item>Wriothesley</item>
+        <item>Xiangling</item>
+        <item>Xiao</item>
+        <item>Xilonen</item>
+        <item>Xingqiu</item>
+        <item>Xinyan</item>
+        <item>Yae Miko</item>
+        <item>Yanfei</item>
+        <item>Yaoyao</item>
+        <item>Yelan</item>
+        <item>Yoimiya</item>
+        <item>Yumemizuki Mizuki</item>
+        <item>Yunjin</item>
+        <item>Zhongli</item>
+    </string-array>
+
 </resources>

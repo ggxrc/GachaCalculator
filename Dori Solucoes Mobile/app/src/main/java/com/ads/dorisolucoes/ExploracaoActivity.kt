@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doAfterTextChanged
 
 class ExploracaoActivity : AppCompatActivity() {
 
@@ -39,7 +38,7 @@ class ExploracaoActivity : AppCompatActivity() {
         val total_explorado = findViewById<EditText>(R.id.total_explorado)
         val bussola = findViewById<RadioGroup>(R.id.rgBussola)
 
-        if (nacoes.text != null)
+        if (nacoes.text != null){
             calcularResultado(nacoes)
 
             nacoes.addTextChangedListener {
@@ -51,6 +50,7 @@ class ExploracaoActivity : AppCompatActivity() {
             bussola.setOnCheckedChangeListener { _, _ ->
                 calcularResultado(nacoes)
             }
+        }
     }
     fun escolherNacao(nacoes: AutoCompleteTextView, onNacaoEscolhida: (String?, Double?) -> Unit) {
         val nacoes_array = resources.getStringArray(R.array.nacoes_array)
@@ -87,7 +87,7 @@ class ExploracaoActivity : AppCompatActivity() {
     }
 
     private fun calcularResultado(nacoes: AutoCompleteTextView) {
-        val valor_total = findViewById<TextView>(R.id.resultado_valor)
+        val valor_total = findViewById<TextView>(R.id.continuar_btn)
 
         escolherNacao(nacoes) { nome: String?, preco: Double? ->
 

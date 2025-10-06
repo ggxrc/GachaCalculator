@@ -82,7 +82,7 @@ class ExploracaoActivity : AppCompatActivity() {
             precos_bussola[nacoes.text.toString()]
         } else precos_bussola["sem desconto"]
 
-        return if(descontoBussola != 0.0) preco *  ( (1 - descontoExploracao ) * descontoBussola!!)
+        return if(descontoBussola != 0.0) preco *  ( (1 - descontoExploracao) * descontoBussola!!)
         else preco * (1 - descontoExploracao)
     }
 

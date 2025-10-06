@@ -12,8 +12,8 @@ object ServicosRepository {
             Servico(
                 nome = "Ascensão",
                 imagemId = R.drawable.dori_hug,
-                desc = "Evolua seus personagens ao máximo! ⭐",
-                destino = AscensaoActivity::class.java
+                desc = "O serviço de Ascenção se encontra indisponível no momento 🥲",
+                destino = null
             ),
             Servico(
                 nome = "Builds",

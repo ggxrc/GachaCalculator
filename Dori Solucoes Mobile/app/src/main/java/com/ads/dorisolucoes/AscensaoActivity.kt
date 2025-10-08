@@ -1,11 +1,9 @@
 package com.ads.dorisolucoes
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
@@ -102,7 +100,7 @@ class AscensaoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ascencao)
-        continuarButton = findViewById(R.id.continuar_btn)
+        continuarButton = findViewById(R.id.resultado)
 
         continuarButton.setOnClickListener {
             calcularAscensao()

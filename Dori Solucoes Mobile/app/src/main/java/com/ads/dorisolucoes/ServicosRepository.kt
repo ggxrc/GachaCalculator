@@ -12,7 +12,7 @@ object ServicosRepository {
             Servico(
                 nome = "Ascensão",
                 imagemId = R.drawable.dori_hug,
-                desc = "O serviço de Ascenção se encontra indisponível no momento 🥲",
+                desc = "O serviço de Ascenção se encontra indisponível no momento",
                 destino = null
             ),
             Servico(

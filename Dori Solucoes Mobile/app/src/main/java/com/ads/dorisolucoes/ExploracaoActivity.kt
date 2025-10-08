@@ -22,7 +22,7 @@ class ExploracaoActivity : AppCompatActivity() {
 
     private val precos_bussola = mapOf(
 
-        "sem desconto" to 1.0,
+        "sem desconto" to 0.0,
         "Mondstadt" to  (1 - 0.05), // 5% de desconto
         "Liyue" to (1 - 0.11), // 11% de desconto
         "Inazuma" to  (1 - 0.17), // 17% de desconto
@@ -38,18 +38,16 @@ class ExploracaoActivity : AppCompatActivity() {
         val total_explorado = findViewById<EditText>(R.id.total_explorado)
         val bussola = findViewById<RadioGroup>(R.id.rgBussola)
 
-        if (nacoes.text != null){
-            calcularResultado(nacoes)
+        calcularResultado(nacoes)
 
-            nacoes.addTextChangedListener {
-                calcularResultado(nacoes)
-            }
-            total_explorado.addTextChangedListener {
-                calcularResultado(nacoes)
-            }
-            bussola.setOnCheckedChangeListener { _, _ ->
-                calcularResultado(nacoes)
-            }
+        nacoes.addTextChangedListener {
+            calcularResultado(nacoes)
+        }
+        total_explorado.addTextChangedListener {
+            calcularResultado(nacoes)
+        }
+        bussola.setOnCheckedChangeListener { _, _ ->
+            calcularResultado(nacoes)
         }
     }
     fun escolherNacao(nacoes: AutoCompleteTextView, onNacaoEscolhida: (String?, Double?) -> Unit) {
@@ -87,7 +85,7 @@ class ExploracaoActivity : AppCompatActivity() {
     }
 
     private fun calcularResultado(nacoes: AutoCompleteTextView) {
-        val valor_total = findViewById<TextView>(R.id.continuar_btn)
+        val valor_total = findViewById<TextView>(R.id.resultado)
 
         escolherNacao(nacoes) { nome: String?, preco: Double? ->
 

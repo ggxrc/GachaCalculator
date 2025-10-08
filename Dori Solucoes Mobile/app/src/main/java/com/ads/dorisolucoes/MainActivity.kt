@@ -19,8 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var continuar_btn : Button // Botão 👍
     private var item_selecionado : View? = null // apenas para marcar e desmarcar o item selecionado
     private var servico_selecionado : Servico? = null // usado pra ir pro serviço em questão
-
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             if (servico_selecionado?.destino != null)
                 startActivity(Intent(this, servico_selecionado?.destino))
             else
-                Toast.makeText(this, "Selecione um serviço válido", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Serviço indisponível, por favor selecione outro...", Toast.LENGTH_SHORT).show()
         }
     }
     private fun carregarServicos(){

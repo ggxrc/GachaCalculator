@@ -19,7 +19,6 @@ data class ItensColetados(
 )
 
 class AscensaoActivity : AppCompatActivity() {
-
     private lateinit var continuarButton: Button
     private lateinit var spinnerNivelAtual: Spinner
     private lateinit var spinnerNivelDesejado: Spinner
@@ -121,6 +120,7 @@ class AscensaoActivity : AppCompatActivity() {
     }
 
     fun calcularAscensao() {
+        TODO("Estudando possíveis otimizações na manipulação dos IDs")
         val preco_base = 30.0
 
         val nivelAtual = findViewById<Spinner>(R.id.spinnerNivelAtual).selectedItem.toString()

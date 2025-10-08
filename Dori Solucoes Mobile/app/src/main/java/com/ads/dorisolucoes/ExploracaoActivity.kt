@@ -8,10 +8,11 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.roundToInt
 
 class ExploracaoActivity : AppCompatActivity() {
 
-    private val preco_nacoes = mapOf<String, Double>(
+    private val preco_nacoes = mapOf(
         "Mondstadt" to  35.0,
         "Liyue" to  40.0,
         "Inazuma" to  50.0,
@@ -46,7 +47,7 @@ class ExploracaoActivity : AppCompatActivity() {
         total_explorado.addTextChangedListener {
             calcularResultado(nacoes)
         }
-        bussola.setOnCheckedChangeListener { _, _ ->
+        bussola.setOnCheckedChangeListener { it, _ ->
             calcularResultado(nacoes)
         }
     }
@@ -69,7 +70,6 @@ class ExploracaoActivity : AppCompatActivity() {
         var descontoExploracao = (0.45 * porcentagemExploracao) / 100
 
         total_explorado.addTextChangedListener{
-
             porcentagemExploracao = total_explorado.text.toString().toDoubleOrNull() ?: 0.0
             descontoExploracao = (0.45 * porcentagemExploracao) / 100
         }
@@ -87,11 +87,11 @@ class ExploracaoActivity : AppCompatActivity() {
     private fun calcularResultado(nacoes: AutoCompleteTextView) {
         val valor_total = findViewById<TextView>(R.id.resultado)
 
-        escolherNacao(nacoes) { nome: String?, preco: Double? ->
+        escolherNacao(nacoes) { nome, preco ->
 
             if (nome != null && preco != null) {
                 val preco_descontado = aplicarDescontos(nacoes, preco)
-                valor_total.text = "A região de $nome custará R$$preco_descontado"
+                valor_total.text = "A região de $nome custará R$${preco_descontado.roundToInt()}"
             } else {
                 valor_total.text = "preencha os campos acima"
             }
